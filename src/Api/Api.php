@@ -64,7 +64,7 @@ abstract class Api implements ApiInterface
      */
     public function baseUrl()
     {
-        return 'https://api.stripe.com';
+        return 'https://www.bongloy.com';
     }
 
     /**
@@ -153,7 +153,7 @@ abstract class Api implements ApiInterface
         try {
             $parameters = Utility::prepareParameters($parameters);
 
-            $response = $this->getClient()->{$httpMethod}('v1/'.$url, [ 'query' => $parameters ]);
+            $response = $this->getClient()->{$httpMethod}('api/v1/'.$url, [ 'query' => $parameters ]);
 
             return json_decode((string) $response->getBody(), true);
         } catch (ClientException $e) {
